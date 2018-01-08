@@ -84,7 +84,7 @@ function templateColumnOptions({ data, render, tmpl, tmplContext }) {
   // we're rendering a template there with Blaze. We can prevent this issue by having the "render"
   // function return an empty string for display content.
   if (data && !render) {
-    options.render = (data, type) => (type === 'display') ? '' : data;
+    options.render = (data, type) => (type === 'display') ? `<span class="hidden">${data}</span>` : data;
   }
 
   return options;
